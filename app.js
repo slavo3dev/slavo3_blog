@@ -85,8 +85,8 @@ app.get("/post/:post", (req, res) => {
       res.redirect('/');
     } else {
       res.render("post", {
-        titleValue: requestTitle,
-        postValue: "Hello" 
+        titleValue: blog.title,
+        postValue: blog.post 
       })
 
     }
