@@ -76,18 +76,33 @@ app.post("/compose", (req, res) => {
 
 
 app.get("/post/:post", (req, res) => {
-  let requestTitle = req.params.post;
+  let requestID = req.params.post;
+  console.log(requestID)
 
-  Blog.findOne({"title":_.lowerCase(requestTitle)}, (err, blog) => {
+  Blog.findOne({_id:requestID}, (err, blog) => {
     if(err){
       console.log(`Error: ${err}`)
+      res.redirect('/');
     } else {
-      res.render("post", { 
-        titleValue: blog.title,
-        postValue: blog.post 
-      });
+      res.render("post", {
+        titleValue: requestTitle,
+        postValue: "Hello" 
+      })
+
     }
-  } )
+  })
+  
+ 
+  // Blog.findOne({title:_.lowerCase(requestTitle)}, (err, blog) => {
+  //   if(err){
+  //     console.log(`Error: ${err}`)
+  //   } else {
+  //     res.render("post", { 
+  //       titleValue: blog.title,
+  //       postValue: blog.post 
+  //     });
+  //   }
+  // } )
   
 })
 
