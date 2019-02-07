@@ -28,8 +28,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  const b = Blog.find()
-  console.log(b);
+
+  Blog.find((err, blogs) => {
+    if(err){
+      console.log(`Error: ${err}`)
+    } else {
+      console.log(blogs);
+    }
+  })
   res.render("home", {
     homePageContent: homeStartingContent, 
     posts: posts
