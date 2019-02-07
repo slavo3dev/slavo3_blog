@@ -76,10 +76,10 @@ app.get("/post/:post", (req, res) => {
       console.log(`Error: ${err}`)
     } else {
       posts.forEach(p => {
-        if(_.lowerCase(p.titleValue) === _.lowerCase(requestTitle)){
+        if(_.lowerCase(p.title) === _.lowerCase(requestTitle)){
            res.render("post", { 
-             titleValue: p.titleValue,
-             postValue: p.postValue 
+             titleValue: p.title,
+             postValue: p.post 
            });
         } 
       })
