@@ -78,7 +78,7 @@ app.post("/compose", (req, res) => {
 app.get("/post/:post", (req, res) => {
   let requestTitle = req.params.post;
 
-  Blog.findOne({"title":_.lowerCase(requestTitle)}, (err, blog){
+  Blog.findOne({"title":_.lowerCase(requestTitle)}, (err, blog) => {
     if(err){
       console.log(`Error: ${err}`)
     } else {
