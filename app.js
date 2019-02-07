@@ -33,15 +33,16 @@ app.get("/", (req, res) => {
     if(err){
       console.log(`Error: ${err}`)
     } else {
-      console.log(blogs[0]._id);
-      console.log(blogs[0].title);
-      console.log(blogs[0].post);
+      res.render("home", {
+        homePageContent: homeStartingContent, 
+        posts: blogs
+      });
     }
   })
-  res.render("home", {
-    homePageContent: homeStartingContent, 
-    posts: posts
-  });
+  // res.render("home", {
+  //   homePageContent: homeStartingContent, 
+  //   posts: posts
+  // });
   
 })
 

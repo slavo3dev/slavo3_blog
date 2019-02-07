@@ -8,9 +8,9 @@
 
  <% posts.forEach(post => { %>
 
-          <h2><%=  post.titleValue %></h2>
+          <h2><%=  post.title %></h2>
           <p>
-          <%= post.postValue.substring(0, 100) + " ...\"" %>
+          <%= post.post.substring(0, 100) + " ...\"" %>
           <a href="/post/<%= post.titleValue %>">Read More </a>
           </p>
           <hr>
