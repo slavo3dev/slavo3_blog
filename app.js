@@ -17,7 +17,7 @@ mongoose.connect('mongodb://localhost:27017/slavoblog', {useNewUrlParser: true})
 
 const blogSchema =  { 
     title: String,
-    body: String 
+    post: String 
   }
 
 
