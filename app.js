@@ -52,6 +52,13 @@ app.post("/compose", (req, res) => {
       titleValue: req.body.titleValue,
       postValue: req.body.postValue
     }
+    
+    const blog = new Blog({
+      title: post.titleValue,
+      post: post.postValue
+    })
+    
+    blog.save().then(() => console.log("Your Post is saved!!"))
     posts.push(post);
     res.redirect("/");
     
