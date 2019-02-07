@@ -63,7 +63,13 @@ app.post("/compose", (req, res) => {
       post: post.postValue
     })
 
-    blog.save().then(() => console.log("Your Post is saved!!"))
+    blog.save((err) =>{
+    if(err){
+      console.log(`Error: ${err}`)
+    }
+    else { res.redirect("/");}
+    })
+      .then(() => console.log("Your Post is saved!!"))
     res.redirect("/");
     
 })
