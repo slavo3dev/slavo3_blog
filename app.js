@@ -33,7 +33,9 @@ app.get("/", (req, res) => {
     if(err){
       console.log(`Error: ${err}`)
     } else {
-      console.log(blogs);
+      console.log(blogs[0]._id);
+      console.log(blogs[0].title);
+      console.log(blogs[0].post);
     }
   })
   res.render("home", {
