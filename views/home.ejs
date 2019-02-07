@@ -1,0 +1,25 @@
+<%- include("./partials/header.ejs") %>
+
+
+<h1>Welcome for Slavo3 Daily Journal</h1>
+<p><%= homePageContent %></p>
+<hr>
+<div>
+
+ <% posts.forEach(post => { %>
+
+          <h2><%=  post.titleValue %></h2>
+          <p>
+          <%= post.postValue.substring(0, 100) + " ...\"" %>
+          <a href="/post/<%= post.titleValue %>">Read More </a>
+          </p>
+          <hr>
+          
+<% })%>
+
+</div>
+
+
+
+
+<%- include("./partials/footer.ejs") %>
