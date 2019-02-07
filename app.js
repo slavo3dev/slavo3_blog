@@ -11,7 +11,6 @@ const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pelle
 const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rhoncus urna neque viverra justo nec ultrices. Arcu dui vivamus arcu felis bibendum. Consectetur adipiscing elit duis tristique. Risus viverra adipiscing at in tellus integer feugiat. Sapien nec sagittis aliquam malesuada bibendum arcu vitae. Consequat interdum varius sit amet mattis. Iaculis nunc sed augue lacus. Interdum posuere lorem ipsum dolor sit amet consectetur adipiscing elit. Pulvinar elementum integer enim neque. Ultrices gravida dictum fusce ut placerat orci nulla. Mauris in aliquam sem fringilla ut morbi tincidunt. Tortor posuere ac ut consequat semper viverra nam libero.";
 
 const app = express();
-const posts =[]
 
 mongoose.connect('mongodb://localhost:27017/slavoblog', {useNewUrlParser: true});
 
@@ -39,7 +38,7 @@ app.get("/", (req, res) => {
       });
     }
   });
-  
+
 })
 
 app.get("/about", (req, res) => {
@@ -65,7 +64,6 @@ app.post("/compose", (req, res) => {
     })
 
     blog.save().then(() => console.log("Your Post is saved!!"))
-    posts.push(post);
     res.redirect("/");
     
 })
@@ -73,14 +71,22 @@ app.post("/compose", (req, res) => {
 
 app.get("/post/:post", (req, res) => {
   let requestTitle = req.params.post;
-  posts.forEach(p => {
-    if(_.lowerCase(p.titleValue) === _.lowerCase(requestTitle)){
-       res.render("post", { 
-         titleValue: p.titleValue,
-         postValue: p.postValue 
-       });
-    } 
+  Blog.find((err, posts) {
+    if (err){
+      console.log(`Error: ${err}`)
+    } else {
+
+      posts.forEach(p => {
+        if(_.lowerCase(p.titleValue) === _.lowerCase(requestTitle)){
+           res.render("post", { 
+             titleValue: p.titleValue,
+             postValue: p.postValue 
+           });
+        } 
+      })
+    }
   })
+  
 })
 
 app.listen(3000, function() {
