@@ -77,6 +77,7 @@ app.post("/compose", (req, res) => {
 
 app.get("/post/:post", (req, res) => {
   let requestTitle = req.params.post;
+  
   Blog.find((err, posts) => {
     if (err){
       console.log(`Error: ${err}`)
