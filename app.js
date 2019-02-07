@@ -88,22 +88,8 @@ app.get("/post/:post", (req, res) => {
         titleValue: blog.title,
         postValue: blog.post 
       })
-
     }
-  })
-  
- 
-  // Blog.findOne({title:_.lowerCase(requestTitle)}, (err, blog) => {
-  //   if(err){
-  //     console.log(`Error: ${err}`)
-  //   } else {
-  //     res.render("post", { 
-  //       titleValue: blog.title,
-  //       postValue: blog.post 
-  //     });
-  //   }
-  // } )
-  
+  })  
 })
 
 app.listen(3000, function() {
