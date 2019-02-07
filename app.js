@@ -71,11 +71,10 @@ app.post("/compose", (req, res) => {
 
 app.get("/post/:post", (req, res) => {
   let requestTitle = req.params.post;
-  Blog.find((err, posts) {
+  Blog.find((err, posts) => {
     if (err){
       console.log(`Error: ${err}`)
     } else {
-
       posts.forEach(p => {
         if(_.lowerCase(p.titleValue) === _.lowerCase(requestTitle)){
            res.render("post", { 
