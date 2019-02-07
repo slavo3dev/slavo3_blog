@@ -38,11 +38,7 @@ app.get("/", (req, res) => {
         posts: blogs
       });
     }
-  })
-  // res.render("home", {
-  //   homePageContent: homeStartingContent, 
-  //   posts: posts
-  // });
+  });
   
 })
 
