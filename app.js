@@ -74,7 +74,6 @@ app.post("/compose", (req, res) => {
     
 })
 
-
 app.get("/post/:post", (req, res) => {
   let requestID = req.params.post;
   console.log(requestID)
