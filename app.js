@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
-const p = require(__dirname + "/passwords")
+// const p = require(__dirname + "/passwords")
 
 
 
@@ -16,8 +16,9 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const app = express();
 
 // Heroku env variables
-let password = process.env.PASSWORD || p.PASS;
+// let password = process.env.PASSWORD || p.PASS;
 let port = process.env.PORT || 3000;
+let password = process.env.PASSWORD
 
 mongoose.connect(`mongodb://slavo3dev:${password}@mimicom24-shard-00-00-wbdvr.mongodb.net:27017,mimicom24-shard-00-01-wbdvr.mongodb.net:27017,mimicom24-shard-00-02-wbdvr.mongodb.net:27017/slavoblog?ssl=true&replicaSet=MimiCom24-shard-0&authSource=admin&retryWrites=true`, {useNewUrlParser: true});
 
