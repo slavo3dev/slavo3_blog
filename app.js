@@ -6,7 +6,8 @@ const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
 
-if ("./passwords"){
+let l = "./passwords.js"
+if (l){
   const p = require(__dirname + "/passwords")
 } 
 
