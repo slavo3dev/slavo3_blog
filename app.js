@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
-const p= require("./passwords")
+const p = require("./passwords")
 
 console.log(p.PASSWORD)
 
