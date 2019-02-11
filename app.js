@@ -5,11 +5,8 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose");
+const p = require(__dirname + "/passwords")
 
-let l = "./passwords.js"
-if (l){
-  const p = require(__dirname + "/passwords")
-} 
 
 
 
