@@ -67,13 +67,16 @@ app.post("/compose", (req, res) => {
     })
 
     blog.save((err) =>{
-    if(err){
-      console.log(`Error: ${err}`)
-    }
-    else { res.redirect("/");}
-    })
-      .then(() => console.log("Your Post is saved!!"))
-    res.redirect("/");
+          if(err){
+               console.log(`Error: ${err}`)
+                }
+             else { 
+               console.log("Your Post is saved")
+               res.redirect("/");
+              }
+             })
+    //   .then(() => console.log("Your Post is saved!!"))
+    // res.redirect("/");
     
 })
 
