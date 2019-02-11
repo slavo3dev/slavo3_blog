@@ -16,7 +16,7 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const app = express();
 
 // Heroku env variables
-let password = p.PASSWORD || process.env.PASSWORD;
+let password = p.PASS || process.env.PASSWORD;
 let port = process.env.PORT || 3000;
 
 mongoose.connect(`mongodb://slavo3dev:${password}@mimicom24-shard-00-00-wbdvr.mongodb.net:27017,mimicom24-shard-00-01-wbdvr.mongodb.net:27017,mimicom24-shard-00-02-wbdvr.mongodb.net:27017/slavoblog?ssl=true&replicaSet=MimiCom24-shard-0&authSource=admin&retryWrites=true`, {useNewUrlParser: true});
