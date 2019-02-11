@@ -18,6 +18,7 @@ const app = express();
 // Heroku env variables
 let password = p.PASSWORD || process.env.PASSWORD;
 let port = process.env.PORT || 3000;
+
 mongoose.connect(`mongodb://slavo3dev:${p.PASSWORD}@mimicom24-shard-00-00-wbdvr.mongodb.net:27017,mimicom24-shard-00-01-wbdvr.mongodb.net:27017,mimicom24-shard-00-02-wbdvr.mongodb.net:27017/slavoblog?ssl=true&replicaSet=MimiCom24-shard-0&authSource=admin&retryWrites=true`, {useNewUrlParser: true});
 
 const blogSchema =  { 
@@ -100,7 +101,7 @@ app.get("/post/:post", (req, res) => {
   })  
 })
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("Server started on port 3000");
 });
 
