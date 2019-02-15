@@ -7,6 +7,10 @@ body {
     padding-top: 70px;
     padding-bottom: 70px;
 }
+
+.nav {
+    color: #646464;
+}
 .navbar {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -56,3 +60,5 @@ hr {
     background-color: #4b8bbe;
     box-shadow: 12px 12px 2px 1px #646464;
 }
+
+
