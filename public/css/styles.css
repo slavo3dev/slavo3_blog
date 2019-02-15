@@ -15,10 +15,11 @@ body {
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
+    color: #ffd43b;
     
 }
 .navbar-nav  li a:hover {
-    color: #1abc9c !important;
+    color: #ffd43b !important;
 }
 
 .footer-padding {
@@ -53,4 +54,5 @@ hr {
 
 .btn {
     background-color: #4b8bbe;
+    box-shadow: 12px 12px 2px 1px #646464;
 }
