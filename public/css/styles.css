@@ -17,11 +17,9 @@ body {
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-    color: #ffd43b;
+    background-color: #306998;
+    color: #ffe873;
     
-}
-.navbar-nav  li a:hover {
-    color: #ffd43b !important;
 }
 
 .footer-padding {
